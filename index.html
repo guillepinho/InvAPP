@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="main.js" defer></script>
+    <title>CRUD Inventório da Casa</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Estoque</h1>
+    </header>
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarItem">Cadastrar Item</button>
+        <table id="inventario" class="records">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>TIPO</th>
+                    <th>QUANTIDADE</th>
+                    <th>AÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2 id="titulo">Novo Produto</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="formCadastro" class="modal-form">
+                    <input id="nome" type="text" data-index="new" class="modal-field" placeholder="Nome do Produto" required>
+                    <input id="tipo" list="Tipo de Produto" class="modal-field" placeholder="Tipo de Produto" required/>
+                    <datalist id="Tipo de Produto" class="modal-drop">
+                        <option value="Alimentação">
+                        <option value="Limpeza">
+                        <option value="Acessórios">
+                        <option value="Outros">
+                    </datalist>
+                    <input id="qtd" type="number" min="0" class="modal-field" placeholder="Quantidade" required>
+                </form>
+                <footer class="modal-footer">
+                    <button id="salvar" class="button green">Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Copyright &copy; GuillePinho
+    </footer>
+</body>
+
+</html>

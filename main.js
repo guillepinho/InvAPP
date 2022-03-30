@@ -1,14 +1,6 @@
 'use strict'
 
 const openModal = () => { 
-    const index = document.getElementById('nome').dataset.index;
-    if (index == 'new') {
-        document.getElementById('titulo').innerHTML = 'Novo Produto';
-    }
-    else {
-        document.getElementById('titulo').innerHTML = 'Alterar Produto';
-    }
-    document.getElementById('nome').dataset.index = 'new';
     document.getElementById('modal').classList.add('active');
 }
 
@@ -71,7 +63,6 @@ const saveProduto = () => {
             updateProduto(index, novoProduto);
             closeModal();
             updateTable();
-            document.getElementById('nome').dataset.index = 'new';
         }
     }
 }
@@ -102,8 +93,6 @@ const clearTable = () => {
     const rows = document.querySelectorAll('#inventario>tbody tr');
     rows.forEach(row => row.parentNode.removeChild(row));
 }
-
-updateTable();
 
 // Editando, Deletando e Usando
 const editDeleteUse = (event) => {
@@ -157,6 +146,8 @@ const useProduto = (index) => {
         alert('Não é possível diminuir o produto a um valor abaixo de 0!')
     }
 }
+
+updateTable();
 
 // Eventos e Listeners
 document.getElementById('cadastrarItem').addEventListener('click', openModal);
